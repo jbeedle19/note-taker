@@ -17,7 +17,7 @@ router.get('/notes', (req, res) => {
 
 // STOPPED HERE, WORKING ON POSTING NEW NOTES
 // POST route for posting a new note to the server
-//router.post('/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     // req.body is wher our incoming content will be
     // Set id based on what the next index of the array will be
     //req.body.id = notes.length.toString();
@@ -31,7 +31,11 @@ router.get('/notes', (req, res) => {
     //    const note = createNewNote(req.body, notes);
     //    res.json(note);
     //}
-//});
+    const newNote = req.body;
+    notes.push(newNote);
+    res.json(newNote);
+    console.log(notes);
+});
 
 // BONUS
 // DELETE route for deleting a note
