@@ -15,7 +15,7 @@ router.get('/notes', (req, res) => {
     res.json(results);
 });
 
-// GET route for shoing note based on id
+// GET route for showing note based on id
 router.get('/notes/:id', (req, res) => {
     const result = findById(req.params.id, notes);
     if (result) {
