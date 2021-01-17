@@ -6,6 +6,10 @@
 
 // Requirements
 const router = require('express').Router();
+const { 
+    createNewNote,
+    validateNote,
+} = require('../../lib/notes');
 const { notes } = require('../../db/db.json');
 
 // GET route for showing the notes on lefthand side
@@ -19,20 +23,20 @@ router.get('/notes', (req, res) => {
 router.post('/notes', (req, res) => {
     // req.body is wher our incoming content will be
     // Set id based on what the next index of the array will be
-    //req.body.id = notes.length.toString();
+    req.body.id = notes.length.toString();
 
     // ADD VALIDATION?
     // if any data in req.body is incorrect, send 400 error back
-    // if (!validateNote(req.body)) {
-    //    res.status(400).send('The note is not properly formatted!');
-    //} else {
+    if (!validateNote(req.body)) {
+        res.status(400).send('The note is not properly formatted!');
+    } else {
         // Add note to json file and notes array in this function
-    //    const note = createNewNote(req.body, notes);
-    //    res.json(note);
-    //}
-    const newNote = req.body;
+        const note = createNewNote(req.body, notes);
+        res.json(note);
+    }
+    /* const newNote = req.body;
     notes.push(newNote);
-    res.json(newNote);
+    res.json(newNote); */
     console.log(notes);
 });
 
