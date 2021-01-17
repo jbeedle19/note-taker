@@ -3,6 +3,7 @@
 // Requirements
 const router = require('express').Router();
 const { 
+    findById,
     createNewNote,
     validateNote,
 } = require('../../lib/notes');
@@ -12,6 +13,16 @@ const { notes } = require('../../db/db.json');
 router.get('/notes', (req, res) => {
     let results = notes;
     res.json(results);
+});
+
+// GET route for shoing note based on id
+router.get('/notes/:id', (req, res) => {
+    const result = findById(req.params.id, notes);
+    if (result) {
+        res.json(result);
+    } else {
+        res.send(404);
+    }
 });
 
 // POST route for posting a new note to the server
@@ -31,7 +42,9 @@ router.post('/notes', (req, res) => {
 });
 
 // DELETE route for deleting a note
-// STOPPED HERE, WORKING ON CREATING A DELETE ROUTE FOR THE BONUS
+router.delete('/notes/:id', (req, res) => {
+    console.log('you are trying to delete');
+});
 
 // BONUS
 // DELETE route for deleting a note
