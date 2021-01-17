@@ -1,8 +1,4 @@
-// API routes below
-// GET /api/notes should read th db.json file and return all saved notes as JSON
-// POST /api/notes should receive a new note to save on the request body, add it to the db.json file,
-// and then return the new note to the client. You'll need to find a way to give each not a unique id when
-// it's saved (look into npm packages that could do this for you).
+// Routes to json data
 
 // Requirements
 const router = require('express').Router();
@@ -15,7 +11,6 @@ const { notes } = require('../../db/db.json');
 // GET route for showing the notes on lefthand side
 router.get('/notes', (req, res) => {
     let results = notes;
-    console.log(results);
     res.json(results);
 });
 
@@ -33,7 +28,6 @@ router.post('/notes', (req, res) => {
         const note = createNewNote(req.body, notes);
         res.json(note);
     }
-    console.log(notes);
 });
 
 // BONUS
