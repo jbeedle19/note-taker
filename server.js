@@ -1,7 +1,8 @@
 // Create the server here
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
+// you can delete fs and path here but wait til you are finished just in case
+//const fs = require('fs');
+//const path = require('path');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 

@@ -15,7 +15,6 @@ router.get('/notes', (req, res) => {
     res.json(results);
 });
 
-// STOPPED HERE, WORKING ON POSTING NEW NOTES
 // POST route for posting a new note to the server
 router.post('/notes', (req, res) => {
     // req.body is wher our incoming content will be
