@@ -11,14 +11,9 @@
       "text": "test text two"
     },
     {
-      "title": "My Note",
-      "text": "this is my wonderful note!",
+      "title": "New Note",
+      "text": "Let's make sure that the text of the note works",
       "id": "2"
-    },
-    {
-      "title": "Title",
-      "text": "This is my wonderful note with a title",
-      "id": "3"
     }
   ]
 }
