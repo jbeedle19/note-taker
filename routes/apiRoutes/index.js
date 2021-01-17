@@ -30,6 +30,9 @@ router.post('/notes', (req, res) => {
     }
 });
 
+// DELETE route for deleting a note
+// STOPPED HERE, WORKING ON CREATING A DELETE ROUTE FOR THE BONUS
+
 // BONUS
 // DELETE route for deleting a note
 // DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete. 
