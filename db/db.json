@@ -1,1 +1,9 @@
-[{"title":"Test Title","text":"Test text"}]
+{
+  "notes": [
+    {
+      "id": "0",
+      "title": "Example Note",
+      "text": "Here is an example note, press the pencil to add a new note!"
+    }
+  ]
+}
