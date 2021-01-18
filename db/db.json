@@ -2,23 +2,8 @@
   "notes": [
     {
       "id": "0",
-      "title": "Test Note Title",
-      "text": "test note message here"
-    },
-    {
-      "title": "Local Note",
-      "text": "Test for if the new note will have a unique ID\n",
-      "id": "1"
-    },
-    {
-      "title": "Test noteId",
-      "text": "test test",
-      "id": "2"
-    },
-    {
-      "title": "Is It Ready?",
-      "text": "Is this ready to deploy or nah?",
-      "id": "3"
+      "title": "Example Note",
+      "text": "Here is an example note, press the pencil to add a new note!"
     }
   ]
 }
