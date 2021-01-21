@@ -4,6 +4,16 @@
       "id": "0",
       "title": "Example Note",
       "text": "Here is an example note, press the pencil to add a new note!"
+    },
+    {
+      "title": "New Note",
+      "text": "Here is my new note",
+      "id": "1"
+    },
+    {
+      "title": "Wow",
+      "text": "it worked",
+      "id": "2"
     }
   ]
 }
