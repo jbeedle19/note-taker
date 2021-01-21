@@ -12,13 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 // Parse incoming JSON data
 app.use(express.json());
 
-app.use("/api", apiRoutes);
-app.use("/", htmlRoutes);
-
 // Instructs the server to make certain files readily available
 app.use(express.static("public"));
 
-const { notes } = require("./db/db.json");
+app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server now listening on port ${PORT}!`);
