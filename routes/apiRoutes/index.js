@@ -6,8 +6,9 @@ const {
     findById,
     createNewNote,
     validateNote,
+    deleteNote,
 } = require('../../lib/notes');
-const { notes } = require('../../db/db.json');
+let { notes } = require('../../db/db.json');
 
 // GET route for showing the notes on lefthand side
 router.get('/notes', (req, res) => {
@@ -27,7 +28,7 @@ router.get('/notes/:id', (req, res) => {
 
 // POST route for posting a new note to the server
 router.post('/notes', (req, res) => {
-    // req.body is wher our incoming content will be
+    // req.body is where our incoming content will be
     // Set id based on what the next index of the array will be
     req.body.id = notes.length.toString();
 
@@ -43,13 +44,16 @@ router.post('/notes', (req, res) => {
 
 // BONUS
 // DELETE route for deleting a note
-// DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete. 
-// In order to delete a note, you'll need to read all notes from the db.json file, remove the note 
-// with the given id property, and then rewrite the notes to the db.json file.
-//STOPPED HERE, WORKING ON DELETING NOTES
-// DELETE route for deleting a note
 router.delete('/notes/:id', (req, res) => {
-    console.log('you are trying to delete a note');
+    const id = req.params.id;
+    console.log(id);
+    notes = deleteNote(id, notes);
+    if (notes) {
+        console.log(notes);
+        res.json(notes);
+    } else {
+        res.send(404);
+    }
 });
 
 module.exports = router;
